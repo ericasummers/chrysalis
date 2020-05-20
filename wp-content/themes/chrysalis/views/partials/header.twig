@@ -1,0 +1,28 @@
+<header class="header-global">
+    <a href="#" class="mobile_menu_toggle"></a>
+    <div class="top-banner">
+        {% if fields.header_logo %}
+            <div class="logo">
+                <a href="/">{{fields.header_logo}}</a>
+            </div>
+        {% else %}
+            <a href="/">{{fields.header_text}}{% if fields.header_subtext %}<span class="subheader">{{fields.header_subtext}}</span>{% endif %}</a>
+        {% endif %}
+    </div>
+    <div class="nav-bar">
+        {% for menu_link in nav_menu.menu_links %}
+            <a href="{{menu_link.link.url}}" class="nav-link">{{menu_link.link.title}}</a>
+        {% endfor %}
+        <a class="purchase-link" href="{{purchase_link.url}}">{{purchase_link.title}}</a>
+    </div>
+    <div class="mobile_menu hidden">
+        {% for menu_link in nav_menu.menu_links %}
+            <div class="mobile-link">
+                <a href="{{menu_link.link.url}}">{{menu_link.link.title}}</a>
+            </div>
+        {% endfor %}
+        <div class="mobile-link purchase-link">
+            <a href="{{purchase_link.url}}" target="_blank">{{purchase_link.title}}</a>
+        </div>
+    </div>
+</header>

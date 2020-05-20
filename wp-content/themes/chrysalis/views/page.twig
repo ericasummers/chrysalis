@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+{% block content %}
+	<main class="main">
+		<div class="content">
+			{{function('apply_filters', 'the_content', fields.post.post_content)}}
+		</div>
+	</main>
+
+{% endblock %}

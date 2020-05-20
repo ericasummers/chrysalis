@@ -1,0 +1,12 @@
+{% extends "base.twig" %}
+{% block content %}
+	<main class="main">
+		<div class="content">
+			<h3>{{fields.heading}}</h3>
+			<p>{{fields.greeting_subheading}}</p>
+			<div class="form">
+				{{function('do_shortcode', fields.form_shortcode)}}
+			</div>
+		</div>
+	</main>
+{% endblock %}
